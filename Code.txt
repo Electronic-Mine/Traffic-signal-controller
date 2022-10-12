@@ -1,0 +1,50 @@
+// C++ code
+//
+const int led_r =  7; 
+const int led_g =  6; 
+const int led_y =  5; 
+const int buzzer =  9; 
+const int sw =  2; 
+
+void setup()
+{
+  pinMode(led_r, OUTPUT);
+  pinMode(led_g, OUTPUT);
+  pinMode(led_y, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+  pinMode(sw, INPUT);
+
+  
+}
+
+void loop()
+{ if(digitalRead(sw)== HIGH)
+ {while(1)
+ {
+  digitalWrite(led_r, HIGH);
+  delay(17000);
+  digitalWrite(buzzer, HIGH);
+  delay(3000);
+  digitalWrite(buzzer, LOW);
+  digitalWrite(led_r, LOW);
+  digitalWrite(led_g, HIGH);
+  delay(17000);
+  digitalWrite(buzzer, HIGH);
+  delay(3000);
+  digitalWrite(buzzer, LOW);
+  digitalWrite(led_g, LOW);
+  delay(1000);
+  digitalWrite(led_y, HIGH);
+  digitalWrite(buzzer, HIGH);
+  delay(3000);
+  digitalWrite(led_y, LOW);
+  digitalWrite(buzzer, LOW);
+ }
+ }else
+ {
+  digitalWrite(led_r, HIGH);
+  delay(1000);
+  digitalWrite(led_r, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+ } 
+}
